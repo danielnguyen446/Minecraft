@@ -5,23 +5,26 @@
  * Sources used: none
  * 
  * This file contains code that demonstrates the use of 2d arrays and array
- * lists.
+ * lists. Arrays and lists will be created and modified based on a given array.
  */
 
 import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * This class contains two methods. The first rotates a floor plan and the 
- * other returns the names of mobs that came into contact with an infected mob.
+ * This class contains two methods. The first takes a floor plan
+ * and rotates it 90 degrees clockwise and the second method returns the names
+ * of mobs that came into contact with a mob infected with covid.
  */
-public class minecraft
+public class Minecraft
 {
+
     /**
      * modifies a 2d array containing blocks on the floor by rotating it 90
-     * degrees clockwise
+     * degrees clockwise.
      * 
-     * @returns the new array
+     * @param originalFloorPlan(a 2d array containing floor block types)
+     * @return newFloorPlan (the new rotated array).
      */
     public static int[][] rotateFloorPlan(int[][] originalFloorPlan)
     {
@@ -53,30 +56,31 @@ public class minecraft
      * Identifies all rows in a 2d array that contain the name of an
      * infected mob
      * 
-     * @returns the strings that were in those rows in an array.
-     *
-    public static ArrayList<String> getMobsToTest(String[][] groups, String infected);
+     * @param groups(2d array of groups that were formed during party)
+     * @param infected(name of infected mob)
+     * @returns mobsToTest (the strings that were in those rows in an array).
+     */
+    public static ArrayList<String> getMobsToTest(String[][] groups, String infected)
     {
         //the list of mobs to test. Return this list.
-        String [] mobsToTest;
+        String[] mobsToTest;
         
-        for(int row=0; a<groups.length; row++)
+        //for every row
+        for(int row=0; row<groups.length; row++)
         {
             if(groups[row].contains(infected) == true)
             {
                 //add every string in the row to mobsToTest
-                    
+                for(int stringIndex=0; stringIndex<length; stringIndex++)
+                {
+
+                }
             }
         }
+        
+        //get rid of duplicates
         return mobsToTest;
-    }*/
+    }
     
 
-    public static void main(String[] args)
-    {
-        
-        
-        
-
-    }
 }
