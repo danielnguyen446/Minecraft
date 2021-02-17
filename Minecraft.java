@@ -58,11 +58,11 @@ public class Minecraft
      * @param groups(2d array of groups that were formed during party)
      * @param infected(name of infected mob)
      * @returns mobsToTest (the strings that were in those rows in an array).
-     *
+     */
     public static ArrayList<String> getMobsToTest(String[][] groups, String infected)
     {
         //make an array list of mobs that came into contact with the infected.
-        ArrayList<String> mobsToTest = new ArrayList<String>();
+        ArrayList<String> mobsContacted = new ArrayList<String>();
         
         //iterate through the 2d array
         for(int row=0; row<groups.length; row++)
@@ -70,26 +70,35 @@ public class Minecraft
             //if the row contains the infected mob
             if(groups[row].contains(infected) == true)
             {
-                //add every string in the row to mobsToTest
+                //add every string in the row to mobsContacted
                 for(int column=0; column<groups[row].length; column++)
                 {
-                    if(!groups[rows][column].equals(infected))
+                    if(!groups[row][column].equals(infected))
                     {
-                        mobsToTest.add(groups[rows][column]);
+                        mobsContacted.add(groups[row][column]);
                     }
                 }
             }
         }
         
-        //get rid of duplicates
-        for
+        /*get rid of duplicates.*/
         
-         
-
+        //create this final Array list to return called mobsToTest
+        ArrayList<String> mobsToTest = new ArrayList<String>();
+        
+        //examine each string on the list mobsContacted
+        for(int a=0;a<mobsContacted.size();a++)
+        {
+            //if mobsToTest does not contain the mob yet, add it to mobsToTest.
+            if(!mobsToTest.contains(mobsContacted.get(a)))
+            {
+                mobsToTest.add(mobsContacted.get(a));
+            }
+        }
+        
         //return the array list
         return mobsToTest;
-    }*/
-
+    }
 }
 
 
