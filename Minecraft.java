@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * and rotates it 90 degrees clockwise and the second method returns the names
  * of mobs that came into contact with a mob infected with covid.
  */
-public class Main
+public class Minecraft
 {
 
     /**
