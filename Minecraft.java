@@ -8,15 +8,14 @@
  * lists. Arrays and lists will be created and modified based on a given array.
  */
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.ArrayList;
 
 /**
  * This class contains two methods. The first takes a floor plan
  * and rotates it 90 degrees clockwise and the second method returns the names
  * of mobs that came into contact with a mob infected with covid.
  */
-public class Minecraft
+public class Main
 {
 
     /**
@@ -59,28 +58,39 @@ public class Minecraft
      * @param groups(2d array of groups that were formed during party)
      * @param infected(name of infected mob)
      * @returns mobsToTest (the strings that were in those rows in an array).
-     */
+     *
     public static ArrayList<String> getMobsToTest(String[][] groups, String infected)
     {
-        //the list of mobs to test. Return this list.
-        String[] mobsToTest;
+        //make an array list of mobs that came into contact with the infected.
+        ArrayList<String> mobsToTest = new ArrayList<String>();
         
-        //for every row
+        //iterate through the 2d array
         for(int row=0; row<groups.length; row++)
         {
+            //if the row contains the infected mob
             if(groups[row].contains(infected) == true)
             {
                 //add every string in the row to mobsToTest
-                for(int stringIndex=0; stringIndex<length; stringIndex++)
+                for(int column=0; column<groups[row].length; column++)
                 {
-
+                    if(!groups[rows][column].equals(infected))
+                    {
+                        mobsToTest.add(groups[rows][column]);
+                    }
                 }
             }
         }
         
         //get rid of duplicates
+        for
+        
+         
+
+        //return the array list
         return mobsToTest;
-    }
-    
+    }*/
 
 }
+
+
+
