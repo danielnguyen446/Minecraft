@@ -8,8 +8,6 @@
  * lists. Arrays and lists will be created and modified based on a given array.
  */
 
-import java.util.ArrayList;
-import java.lang.*; 
 import java.util.*; 
 /**
  * This class contains two methods. The first takes a floor plan
@@ -58,7 +56,7 @@ public class Minecraft
      * 
      * @param groups(2d array of groups that were formed during party)
      * @param infected(name of infected mob)
-     * @return mobsToTest (the strings that were in those rows in an array).
+     * @returns mobsToTest (the strings that were in those rows in an array).
      */
     public static ArrayList<String> getMobsToTest(String[][] groups, String infected)
     {
@@ -72,8 +70,12 @@ public class Minecraft
             if(Arrays.toString(groups[row]).indexOf(infected) >= 0){
                 for(int i = 0; i < groups[row].length; i++)
                 {
-                    //add every string in the row to mobsContacted
-                    mobsContacted.add(groups[row][i]);
+                    //add every valid string in the row to mobsContacted
+                    if (groups[row][i]!=infected && groups[row][i]!=null)
+                    {
+                        //valid meaning besides the infected name or null
+                        mobsContacted.add(groups[row][i]);
+                    }
                 }
             }
         }
