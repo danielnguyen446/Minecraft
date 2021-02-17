@@ -2,7 +2,8 @@
  * Name: Daniel Nguyen
  * ID: A16129027
  * Email: d7nguyen@ucsd.edu
- * Sources used: https://learn.zybooks.com/zybook/UCSDCSE11CaoWinter2021/chapter/9/section/1
+ * Sources used: 
+ * https://learn.zybooks.com/zybook/UCSDCSE11CaoWinter2021/chapter/9/section/1
  * 
  * This file contains code that demonstrates the use of 2d arrays and array
  * lists. Arrays and lists will be created and modified based on a given array.
@@ -58,7 +59,8 @@ public class Minecraft
      * @param infected(name of infected mob)
      * @returns mobsToTest (the strings that were in those rows in an array).
      */
-    public static ArrayList<String> getMobsToTest(String[][] groups, String infected)
+    public static ArrayList<String> getMobsToTest(String[][] groups,
+    String infected)
     {
         //make an array list of mobs that came into contact with the infected.
         ArrayList<String> mobsContacted = new ArrayList<String>();
