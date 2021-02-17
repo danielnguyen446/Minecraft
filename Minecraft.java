@@ -2,14 +2,15 @@
  * Name: Daniel Nguyen
  * ID: A16129027
  * Email: d7nguyen@ucsd.edu
- * Sources used: none
+ * Sources used: https://learn.zybooks.com/zybook/UCSDCSE11CaoWinter2021/chapter/9/section/1
  * 
  * This file contains code that demonstrates the use of 2d arrays and array
  * lists. Arrays and lists will be created and modified based on a given array.
  */
 
 import java.util.ArrayList;
-
+import java.lang.*; 
+import java.util.*; 
 /**
  * This class contains two methods. The first takes a floor plan
  * and rotates it 90 degrees clockwise and the second method returns the names
@@ -57,26 +58,22 @@ public class Minecraft
      * 
      * @param groups(2d array of groups that were formed during party)
      * @param infected(name of infected mob)
-     * @returns mobsToTest (the strings that were in those rows in an array).
+     * @return mobsToTest (the strings that were in those rows in an array).
      */
     public static ArrayList<String> getMobsToTest(String[][] groups, String infected)
     {
         //make an array list of mobs that came into contact with the infected.
         ArrayList<String> mobsContacted = new ArrayList<String>();
         
-        //iterate through the 2d array
+        //iterate through the 2d array's rows
         for(int row=0; row<groups.length; row++)
         {
             //if the row contains the infected mob
-            if(groups[row].contains(infected) == true)
-            {
-                //add every string in the row to mobsContacted
-                for(int column=0; column<groups[row].length; column++)
+            if(Arrays.toString(groups[row]).indexOf(infected) >= 0){
+                for(int i = 0; i < groups[row].length; i++)
                 {
-                    if(!groups[row][column].equals(infected))
-                    {
-                        mobsContacted.add(groups[row][column]);
-                    }
+                    //add every string in the row to mobsContacted
+                    mobsContacted.add(groups[row][i]);
                 }
             }
         }
@@ -99,7 +96,20 @@ public class Minecraft
         //return the array list
         return mobsToTest;
     }
-}
+    
+    /**
+     * No main method required in this PA.
+     */
+    public static void main(String[] args)
+    {
+    
+    }
+}  
+
+
+
+
+
 
 
 
